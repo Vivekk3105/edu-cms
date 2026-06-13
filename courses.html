@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ============================================================
+       EduCMS - Course Listing Page
+       ============================================================ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse all courses at EduCMS. Filter by category, level, and price to find the perfect program for your career goals.">
+  <title>Courses — EduCMS</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader"><div class="loader-spinner"></div></div>
+
+  <!-- ==================== NAVBAR ==================== -->
+  <nav class="navbar navbar-expand-lg navbar-main fixed-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i class="fas fa-graduation-cap"></i> EduCMS
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#faculty">Faculty</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#blog">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="login.html" class="btn nav-cta-btn"><i class="fas fa-user-circle mr-1"></i> Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ==================== PAGE HEADER ==================== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Explore Our Courses</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Courses</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ==================== SEARCH & FILTER BAR ==================== -->
+  <div class="container">
+    <div class="search-filter-bar">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-3 mb-lg-0">
+          <div class="search-input-group">
+            <i class="fas fa-search"></i>
+            <input type="text" class="form-control" id="courseSearchInput" placeholder="Search courses by title, instructor...">
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-3 mb-md-0">
+          <select class="form-control filter-select" id="categoryFilter">
+            <option value="">All Categories</option>
+            <option value="Technology">Technology</option>
+            <option value="Business">Business</option>
+            <option value="Design">Design</option>
+            <option value="Arts">Arts</option>
+          </select>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-3 mb-md-0">
+          <select class="form-control filter-select" id="levelFilter">
+            <option value="">All Levels</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <select class="form-control filter-select" id="sortFilter">
+            <option value="popular">Most Popular</option>
+            <option value="rating">Highest Rated</option>
+            <option value="newest">Newest</option>
+            <option value="price-low">Price: Low-High</option>
+            <option value="price-high">Price: High-Low</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== COURSE LISTING ==================== -->
+  <section class="section-padding" style="padding-top:40px;">
+    <div class="container">
+      <!-- Results Info -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <p class="mb-0" style="color:var(--text-secondary);">
+          Showing <strong id="resultCount">0</strong> courses
+        </p>
+      </div>
+
+      <!-- Course Grid -->
+      <div class="row" id="courseListGrid">
+        <!-- Populated by courses.js -->
+      </div>
+
+      <!-- Empty State -->
+      <div class="empty-state d-none" id="emptyState">
+        <i class="fas fa-search"></i>
+        <h5>No Courses Found</h5>
+        <p>Try adjusting your search or filter criteria.</p>
+        <button class="btn btn-primary-custom" id="resetFiltersBtn">Reset Filters</button>
+      </div>
+
+      <!-- Pagination -->
+      <nav class="pagination-wrapper" id="paginationWrapper">
+        <ul class="pagination" id="coursePagination">
+          <!-- Generated by JS -->
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <!-- ==================== CTA SECTION ==================== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Can't Find the Right Course?</h2>
+        <p>Contact us and our academic advisors will help you choose the best program for your goals.</p>
+        <a href="index.html#contact" class="btn btn-primary-custom" style="background:#fff;color:var(--primary);">
+          <i class="fas fa-headset mr-2"></i> Talk to an Advisor
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer-main">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="footer-brand">
+            <h4><i class="fas fa-graduation-cap"></i> EduCMS</h4>
+            <p>Empowering learners worldwide with premium education and cutting-edge curriculum.</p>
+          </div>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="courses.html"><i class="fas fa-chevron-right"></i> Courses</a></li>
+            <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            <li><a href="login.html"><i class="fas fa-chevron-right"></i> Login</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-6 mb-4">
+          <h5 class="footer-heading">Programs</h5>
+          <ul class="footer-links">
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Web Dev</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Data Science</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> UI/UX Design</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4">
+          <h5 class="footer-heading">Contact Info</h5>
+          <div class="footer-contact-item">
+            <i class="fas fa-envelope"></i><span>info@educms.edu</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fas fa-phone-alt"></i><span>+1 (555) 123-4567</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 EduCMS. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/courses.js"></script>
+</body>
+</html>
