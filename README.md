@@ -2,9 +2,9 @@
 
 A responsive Educational CMS Website developed using HTML5, CSS3, Bootstrap, JavaScript, and jQuery.
 
-## Live Demo
+## 🚀 Live Demo
 
-🌐 <a href="https://edu-cms-web.netlify.app/" target="_blank"> https://edu-cms-web.netlify.app </a>
+🌐 https://edu-cms-web.netlify.app
 
 ## Features
 
@@ -26,5 +26,3 @@ A responsive Educational CMS Website developed using HTML5, CSS3, Bootstrap, Jav
 - Bootstrap 5
 - JavaScript
 - jQuery
-
-
